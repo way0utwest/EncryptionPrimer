@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Filename"
+		description="rjqggri.bmp, uuebzfywhi.xls, knoyqknjob.txt..."
+		category="Business">
+
+		<property name="Expression">[a-z]{3,10}\.(bmp|doc|xls|txt|ini|php|asm|pdf)</property>
+
+		<matches field="Filename" score="100" minlen="3"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

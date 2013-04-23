@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="P.O. Box"
+		description="P.O. Box 139, PO Box 12, P.O. Box 7039..."
+		category="Geographical">
+
+		<property name="Expression">((P.O.)|(PO)) Box [1-9][0-9]{0,4}</property>
+
+		<type type="string"/>
+	</generator>
+</generators>

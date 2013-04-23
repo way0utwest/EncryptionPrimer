@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Social Security Number"
+		description="950-95-8060, 626-39-6597, 763-98-0639..."
+		category="Personal">
+
+		<property name="Expression">[0-9]{3}-[0-9]{2}-[0-9]{4}</property>
+
+		<matches field=".*social.*security.*num.*" score="95" minlen="11"/>
+		<matches field=".*SS.*num.*" score="85" minlen="11"/>
+		<matches field="SSN" score="75" minlen="11"/>
+		<type type="string"/>
+	</generator>
+</generators>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="URL (Web)"
+		description="http://pen.net17/olbs.html, http://xbj.net13/sqcas/htjtl/snr.aspx..."
+		category="Business">
+		<property name="Expression">http://[a-z]{3,5}\.(web|net|local)[a-z]{0,1}[0-9]{0,2}/([a-z]{5}/){1,4}[a-z]{3,5}\.(html|htm|php|aspx)</property>
+		<matches field="HomePage" score="50" minlen="56"/>
+		<matches field="URL" score="50" minlen="56"/>
+		<matches field="Page" score="5" minlen="56"/>
+		<type type="string"/>
+	</generator>
+</generators>

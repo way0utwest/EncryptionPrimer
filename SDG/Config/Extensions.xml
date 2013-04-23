@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Extensions"
+		description="3,123,1034,21,768..."
+		category="Personal">
+
+		<property name="Expression">[0-9]{1,3}</property>
+
+		<matches field="extension" score="100" minlen="3"/>
+		<matches field="extn" score="20" minlen="3"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Address Line 1"
+		description="Suite 208,7th Floor,APT 68, Flanklin Building,Sales Group..."
+		category="Geographical">
+
+		<property name="Expression">((APT|Appartment) [1-9][0-9]{0,2})|(Suite [1-9][0-9]{0,3})|((1st|2nd|3rd|[4-9]th|[1-9]{2,3}th) Floor)|((Sales|Customer|After Sales|Pre Sales|Post Sales|) (Group|Department))|((Lincoln|Washington|Jefferson|Roosevelt|Hamilton|Franklin|Marshall|Edison|Wilson|Madison|Roosevelt|Truman|Einstein|Anthony|Sanger|Foster) Building)</property>
+		<matches Field=".*Address.*" score="45" minlen="22"/>
+		<matches Field=".*Address.*1" score="60" minlen="22"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

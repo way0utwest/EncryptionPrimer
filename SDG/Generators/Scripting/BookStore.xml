@@ -1,0 +1,37 @@
+﻿<bookstore>
+  <book publicationdate='2011-07-01'>
+    <title>SQL Server Hardware</title>
+    <author>
+      <first-name>Glenn</first-name>
+      <last-name>Berry</last-name>
+    </author>
+    <price currency="GBP">19.99</price>
+  </book>
+
+  <book publicationdate="2010-11-01">
+    <title>Inside the SQL Server Query Optimizer</title>
+    <author>
+      <first-name>Benjamin</first-name>
+      <last-name>Nevarez</last-name>
+    </author>
+    <price currency="GBP">19.99</price>
+  </book>
+
+  <book publicationdate="2010-11-01">
+    <title>SQL Server Statistics</title>
+    <author>
+      <first-name>Holger</first-name>
+      <last-name>Schmeling</last-name>
+    </author>
+    <price currency="GBP">0.00</price>
+  </book>
+
+  <book publicationdate="2010-11-01">
+    <title>The Red Gate Guide to SQL Server Team-based Development</title>
+    <author>
+      <first-name>Phil</first-name>
+      <last-name>Factor</last-name>
+    </author>
+    <price currency="GBP">19.99</price>
+  </book>
+</bookstore>

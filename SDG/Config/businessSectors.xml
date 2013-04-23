@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.FileListGenerator"
+		name="Sector"
+		description="Aerospace (Civil),Agriculture, Horticulture &amp; Fisheries,Airports,Automotive..."
+		category="Business">
+		<property name="FileName">businessSectors.txt</property>
+		<type type="string"/>
+		<matches field="Sector" score="10"/>		
+	</generator>
+	
+</generators>

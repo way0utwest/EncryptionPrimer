@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.PaymentGenerators.CreditCardNumber"
+		name="Credit Card Number"
+		description="Credit Card Numbers with valid checksum"
+		category="Payment">
+
+		<property name="Prefixes">34-15,37-15;51,52,53,54,55;42,43,44,46,47,48</property>
+
+		<matches table=".*Credit.?Card.*" field=".*Number.*" score="95" minlen="16"/>
+		<matches field=".*CreditCard.*Number" score="90" minlen="16"/>
+		<matches field="CCN" score="50" minlen="16"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

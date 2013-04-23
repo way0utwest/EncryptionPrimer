@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator 
+		type="RedGate.SQLDataGenerator.Generators.Number.Int32Generator" 
+		name="Working Age" 
+		description="29,30,35,18..." 
+		category="Personal">
+
+		<property name="MinValue">18</property>
+		<property name="MaxValue">65</property>
+
+		<matches field="Age" score="50"/>		
+
+		<type type="Int64"/>
+		<type type="Int32"/>
+		<type type="Int16"/>
+		<type type="Byte"/>	
+	</generator>
+</generators>

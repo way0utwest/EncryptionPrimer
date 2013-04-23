@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="5 Digit Ids"
+		description="67815,98234, 71333, 89620, 04231..."
+		category="Business">
+		<property name="Expression">[0-9]{5}</property>		
+		<matches field="ID" score="20" minlen="5"/>
+		<matches field="ACC" score="20" minlen="5"/>
+		<matches field="NUM" score="20" minlen="5"/>
+		<type type="string"/>
+	</generator>
+</generators>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Source of leads"
+		description="Sales, Word of mouth..."
+		category="Business">
+		<property name="Expression">(Sales|Internet|Direct|Add. Words|Previous Customer|Google Adds|Word of mouth)</property>
+		<matches field="Source" score="10" minlen="17"/>
+		<type type="string"/>
+	</generator>
+</generators>

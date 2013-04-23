@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Phone Number"
+		description="(476) 391-0239, 114-479-4304, (829) 310-4824..."
+		category="Personal">
+
+		<property name="Expression">((\([0-9]{3}\) )|([0-9]{3}-))[0-9]{3}-[0-9]{4}</property>
+
+		<matches field=".*Phone.*" score="100" minlen="14"/>	
+		<matches field=".*Tel.*" score="99" minlen="14"/>
+		<matches field=".*Fax.*" score="99" minlen="14"/>
+		<matches field=".*Mobile.*" score="99" minlen="14"/>
+		<type type="string"/>
+	</generator>
+</generators>

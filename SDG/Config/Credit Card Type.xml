@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Credit Card Type"
+		description="AmEx, Mastercard, VISA"
+		category="Payment">
+
+		<property name="Expression">AmEx|Mastercard|VISA</property>
+
+		<matches table="Credit.?Card" field="Type" score="95" minlen="16"/>
+		<matches field="CreditCard.*Type" score="90" minlen="9"/>
+		<matches field="CC.*type" score="40" minlen="9"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

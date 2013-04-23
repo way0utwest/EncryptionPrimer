@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Contact Title"
+		description="Sales Manager, Owner, Marketting Associate..."
+		category="Personal">
+		<property name="Expression">((Corporate |Technical |National |International |Business |Consumer |Accessory |||)(Sales|Marketing|Customer)|Technical|Accounting|Service|Prepaid Customer|Web)</property>
+		<matches field="Contact.*Title" score="50" minlen="23"/>
+		<matches field="Title.*Contact" score="50" minlen="23"/>
+		<type type="string"/>
+	</generator>
+</generators>

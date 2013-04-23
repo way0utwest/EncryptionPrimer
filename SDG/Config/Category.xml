@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Categories"
+		description="Cereals, Grain, Confections, Produce..."
+		category="Business">
+		<property name="Expression">(Dairy|Beverages|Confections|Seafood|Meat|Poultry|Grain|Cereals|Produce|Shell fish|Snails)</property>		
+		<matches field="Category" score="20" minlen="10"/>
+		<type type="string"/>
+	</generator>
+</generators>

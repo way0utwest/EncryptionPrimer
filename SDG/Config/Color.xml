@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.FileListGenerator"
+		name="Color"
+		description="AliceBlue, AntiqueWhite, Aqua, Aquamarine..."
+		category="Personal">
+		<property name="FileName">color.txt</property>
+		<type type="string"/>
+		<matches field="^Color$" score="50" minlen="15"/>
+		<matches field="Color" score="30" minlen="15"/>
+	</generator>
+</generators>

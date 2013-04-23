@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Credit Card Date"
+		description="mm/yy: 03/04, 10/14, 02/18, 11/05..."
+		category="Payment">
+
+		<property name="Expression">(01|02|03|04|05|06|07|08|09|10|11|12)/([01][0-9])</property>
+
+		<matches table=".*Credit.?Card.*" field=".*(Start|Expiry).*Date.*" score="95" minlen="5"/>
+		<matches table=".*Credit.?Card.*" field=".*(Start|Expiry).*" score="85" minlen="5"/>
+		<matches field=".*(CreditCard|cc).*(Start|Expiry).*Date" score="90" minlen="5"/>
+		<matches field=".*(CreditCard|cc).*(Start|Expiry)" score="50" minlen="5"/>
+		<matches field=".*(Start|Expiry)" score="10" minlen="5"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

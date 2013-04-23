@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Folder (Dos)"
+		description="U:\Program Files\Sales\Temp\Product\qqqc.doc, C:\Windows\Red Gate\Builds\Sales\gunit.txt"
+		category="Business">
+		<property name="Expression">[A-Z]:\\(Windows|Win|Program|Program Files|Document and Settings|Inetpub)\\((Temp|Red Gate|Business|Sales|Test|Products|Builds|SQL Compare|SQL Data Compare|SQL Refactor|SQL Prompt|SQL Data Generator)\\){1,5}[a-z]{3,5}\.(bmp|doc|xls|txt|ini|php|asm|pdf)</property>
+		<matches field="Dos.*Folder" score="50" minlen="129"/>
+		<matches field="Dos.*Path" score="20" minlen="129"/>
+		<type type="string"/>
+	</generator>
+</generators>

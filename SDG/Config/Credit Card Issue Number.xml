@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Credit Card Issue Number"
+		description="3, 1, 5, 7, 6..."
+		category="Payment">
+
+		<property name="Expression">[1-9]</property>
+
+		<matches table="Credit.?Card.*" field=".*Issue.*Num" score="95" minlen="1"/>
+		<matches field="Credit.?Card.*Issue" score="40" minlen="1"/>
+		<matches field="CC.*issue" score="30" minlen="1"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

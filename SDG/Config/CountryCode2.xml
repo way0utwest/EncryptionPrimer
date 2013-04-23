@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.FileListGenerator"
+		name="Country Code(short)"
+		description="AD, AE, AF, AG, AI, AL..."
+		category="Geographical">
+
+		<property name="FileName">CountryCode2.txt</property>
+
+		<matches table="Country" field="Code" score="90" minlen="2" maxlen="2"/>
+		<matches field=".*Country.*" score="91" minlen="2" maxlen="2"/>
+		<matches field=".*Addr.*3" score="11" minlen="2" maxlen="2"/>
+		<matches field=".*Addr.*[4-6]" score="21" minlen="2" maxlen="2"/>
+
+		<type type="string"/>
+	</generator>
+
+</generators>

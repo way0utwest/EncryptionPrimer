@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Full Names"
+		description="Emma Smith, John Brown, Andrew Clarke, Tom O'Hare, Claire Harris..."
+		category="Personal">
+
+		<property name="Expression">($"NamesFirst.txt") ($"NamesLast.txt")</property>
+
+		<matches field="Full.?Name" score="90" minlen="20"/>
+		<matches field="Name" score="8" minlen="20"/>
+		<matches table="(Cust|Person|Employee|User)" field="Name" score="26" minlen="20"/>		
+		<matches table="(Cust|Person|Employee|User)" field="Full.*Name" score="99" minlen="20"/>		
+		<type type="string"/>
+	</generator>
+</generators>

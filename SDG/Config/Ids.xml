@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<generators>
+ <generator type="RedGate.SQLDataGenerator.Generators.Number.Int32Generator" name="IDs" description="1,2,3,4,5,6...." category="Business">
+   <property name="MinValue">1</property> 
+   <property name="UseSequence">True</property> 
+   <property name="Unique">True</property> 
+   <property name="ValidateIncrement">1</property> 
+   <matches field="ID" score="5" /> 
+   <type type="Int32" /> 
+  </generator>
+
+ <generator type="RedGate.SQLDataGenerator.Generators.Number.Int64Generator" name="IDs" description="1,2,3,4,5,6...." category="Business">
+   <property name="MinValue">1</property> 
+   <property name="UseSequence">True</property> 
+   <property name="Unique">True</property> 
+   <property name="ValidateIncrement">1</property> 
+   <matches field="ID" score="5" /> 
+   <type type="Int64" /> 
+  </generator>
+
+ <generator type="RedGate.SQLDataGenerator.Generators.Number.Int16Generator" name="IDs" description="1,2,3,4,5,6...." category="Business">
+   <property name="MinValue">1</property> 
+   <property name="UseSequence">True</property> 
+   <property name="Unique">True</property> 
+   <property name="ValidateIncrement">1</property> 
+   <matches field="ID" score="5" /> 
+   <type type="Int16" /> 
+  </generator>
+
+ <generator type="RedGate.SQLDataGenerator.Generators.Number.ByteGenerator" name="IDs" description="1,2,3,4,5,6...." category="Business">
+   <property name="MinValue">1</property> 
+   <property name="UseSequence">True</property> 
+   <property name="Unique">True</property> 
+   <property name="ValidateIncrement">1</property> 
+   <matches field="ID" score="5" /> 
+   <type type="Byte" /> 
+  </generator>
+
+</generators>

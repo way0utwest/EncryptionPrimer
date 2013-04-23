@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.FileListGenerator"
+		name="Last Name"
+		description="Smith, Brown, Clarke, O'Hare, Harris..."
+		category="Personal">
+
+		<property name="FileName">NamesLast.txt</property>
+
+		<matches field="Last.?Name" score="100" minlen="10"/>
+		<matches field=".*Name.*" score="9" minlen="10"/>
+		<matches table=".*(Cust|Person|Employee|User).*" field=".*Name.*" score="15" minlen="10"/>
+		<matches table=".*(Cust|Person|Employee|User).*" field=".*Last.*" score="40" minlen="10"/>
+		<matches table=".*(Cust|Person|Employee|User).*" field=".*Last.*Name" score="99" minlen="10"/>
+		<matches table=".*(Cust|Person|Employee|User).*" field=".*Sur.*Name" score="99" minlen="10"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

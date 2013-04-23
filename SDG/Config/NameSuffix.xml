@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Name (Suffix)"
+		description="Sr., jr, Ph.D.,BA..."
+		category="Personal">
+		<property name="Expression">(Sr.|jr.|III|IV|V|A.B.|BA|B.A.|BSc|B.S.|M.A.|M.B.A.|MBA.|M.Sc.|Ph.D.|D.Phil.|D.D.|M.D.|J.D.|||||)</property>
+		<matches field="Suffix" score="10" minlen="2"/>
+		<type type="string"/>
+	</generator>
+</generators>
