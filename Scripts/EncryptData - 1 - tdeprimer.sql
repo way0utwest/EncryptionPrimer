@@ -34,6 +34,11 @@ GO
 SELECT * FROM Mytable;
 go
 
+-- Make initial backup
+BACKUP DATABASE TDE_Primer
+  TO DISK = 'TDE_PRimer_Full_Base.bak'
+  WITH INIT
+;
 
 
 
@@ -173,6 +178,7 @@ CREATE DATABASE [TDE_Primer] ON
 GO
 BACKUP DATABASE TDE_Primer
   TO DISK = 'TDE_PRimer_Full.bak'
+  WITH INIT
 ;
 go
 
