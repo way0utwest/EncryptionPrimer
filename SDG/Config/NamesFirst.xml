@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.FileListGenerator"
+		name="First Name"
+		description="Emma, Lionel, Charlotte, David, Tanya, Marine..."
+		category="Personal">
+
+		<property name="FileName">NamesFirst.txt</property>
+
+		<matches field="First ?Name" score="100" minlen="9"/>
+		<matches field=".*Name.*" score="9" minlen="9"/>
+		<matches table=".*(Cust|Person|Employee|User).*" field=".*Name.*" score="20" minlen="9"/>
+		<matches table=".*(Cust|Person|Employee|User).*" field=".*First.*" score="40" minlen="9"/>
+		<matches table=".*(Cust|Person|Employee|User).*" field=".*First.*Name" score="99" minlen="9"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

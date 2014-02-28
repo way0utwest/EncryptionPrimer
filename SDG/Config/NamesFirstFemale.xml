@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.FileListGenerator"
+		name="First Name (Female)"
+		description="Jennifer, Amy, Heather, Melissa, Angela..."
+		category="Personal">
+
+		<property name="FileName">NamesFirstFemale.txt</property>
+		<type type="string"/>
+	</generator>
+</generators>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Department"
+		description="Corporate Sales, Service, Prepaid Customer, Corporate Care... "
+		category="Business">
+		<property name="Expression">((Corporate|Technical|National|International|Business|Consumer|Accessory|)Sales|Technical|Marketing|Accounting|Cutomer|Service|Prepaid Customer|Corporate Care|Web)</property>
+		<matches field="department" score="10" minlen="18"/>
+		<type type="string"/>
+	</generator>
+</generators>

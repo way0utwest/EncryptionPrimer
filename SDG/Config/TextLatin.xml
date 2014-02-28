@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator 
+		type="RedGate.SQLDataGenerator.DescriptionGenerators.TextGenerator" 
+		name="Description" 
+		description="Id eudis quo" 
+		category="Shopping">
+
+		<property name="InputText">Id eudis quo linguens imaginator pars fecit.  Et quad estis vobis homo, si quad fecit, non apparens vantis. Sed quad ut novum vobis regit, et nomen novum eggredior.  Longam, e gravis et pladior venit.  Tam quo, et bono quorum glavans e funem.  Quad rarendum habitatio quoque plorum fecundio, et quis gravis delerium.  Versus esset in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum.  Multum gravum et plurissimum parte brevens, non quo plorum in volcans essit.  Pro linguens non trepicandor si nomen transit.</property>
+
+		<matches field=".*Info.*" score="9"/>
+		<matches field=".*Desc.*" score="9"/>
+		<matches field=".*Type.*" score="9"/>
+		<matches field=".*Comment.*" score="9"/>
+		<matches field=".*Reason.*" score="9"/>
+		<matches field=".*Category.*" score="9"/>
+		<matches field=".*Event.*" score="9"/>
+		<matches field=".*Note.*" score="9"/>
+		<type type="string"/>		
+	</generator>
+</generators>

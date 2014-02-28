@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Account Number"
+		description="RET36662, BAZ78722, JAT21492, NOR79692, NIX44201"
+		category="Business">
+		<property name="Expression">[BCDFGHJKLMNPQRSTVWXYZ][AEIOU][BCDFGHJKLMNPQRSTVWXYZ][0-9]{0,5}</property>
+		<matches field="Account" score="50" minlen="8"/>
+		<matches field="ACC" score="10" minlen="8"/>
+		<matches field="ID" score="20" minlen="8"/>
+		<type type="string"/>
+	</generator>
+</generators>

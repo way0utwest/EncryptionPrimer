@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.FileListGenerator"
+		name="US State"
+		description="Alabama, Alaska, Arizona, Arkansas, California, Colorado..."
+		category="Geographical">
+
+		<property name="FileName">State.txt</property>
+
+		<matches field="State" score="60" minlen="10"/>
+		<matches field="Addr.*4" score="25" minlen="10"/>
+		<matches field="Addr.*[356]" score="10" minlen="10"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

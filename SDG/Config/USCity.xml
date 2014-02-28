@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.FileListGenerator"
+		name="US City"
+		description="New York, Los Angeles, Chicago..."
+		category="Geographical">
+
+		<property name="FileName">USCity.txt</property>
+
+		<matches field="City" score="50"/>
+		<matches field="Addr.*2" score="40"/>
+		<matches field="Addr.*[34]" score="25"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

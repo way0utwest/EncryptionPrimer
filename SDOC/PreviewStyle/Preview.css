@@ -1,0 +1,45 @@
+/*	Red Gate SQL Doc Preview Supplementary Stylesheet */
+
+.editableDescriptionGroup
+{
+	position: relative;
+	/* hacks to make IE treat div as a containing block by making it "hasLayout" . */
+	height: 0;
+	he\ight: auto;
+	zoom: 1;
+}
+
+.editableDescription
+{
+	display: inline;
+}
+
+.invisible
+{
+	visibility : hidden;
+}
+.floatright 
+{
+	position: absolute;
+	bottom: -2px;
+	right: -3px;
+}
+
+.editIcon a:link {
+	text-decoration: none;
+}
+.editIcon 
+{
+	display: inline;
+	background-color:#FFFFCC;
+	border-width:1px;
+	border-style: solid;
+	border-color: #dddddd;
+	font-size: 11px;
+	margin: 0;
+}
+
+.notinpreview
+{
+    color: Gray;
+}

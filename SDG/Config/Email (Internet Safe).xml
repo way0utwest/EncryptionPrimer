@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Email (Internet Safe)"
+		description="a1@example.com, qtaj@example.com, zxzdx@example.com..."
+		category="Personal">
+
+		<property name="Expression">[a-z]{4,8}([0-9]{0,3}|\.[a-z]{4,10})@example.com</property>
+
+		<type type="string"/>
+	</generator>
+</generators>

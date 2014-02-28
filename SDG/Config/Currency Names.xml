@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Currency Name"
+		description="Euro, Pound Sterling, US dollar..."
+		category="Payment">
+
+		<property name="Expression">Australian dollar|Swiss franc|Euro|Pound sterling|Yen|US dollar</property>
+
+		<matches field="CurrencyName" score="100" minlen="4"/>
+		<matches table="Currency" field="Name" score="70" minlen="4"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

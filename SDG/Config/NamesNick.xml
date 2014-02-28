@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Nick Name"
+		description="Mike124, Chris1, Tom78, Jenny39, Amy12, Mel54..."
+		category="Personal">
+
+		<property name="Expression">($"NamesFirst.txt")[0-9]{0,3}</property>
+
+		<matches field="(Nick|User).?Name" score="100" minlen="12"/>
+		<matches field="Name" score="10" minlen="12"/>
+		<matches field="dear" score="10" minlen="12"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.Generators.Binary.FileImportGenerator"
+		name="Images of people"
+		description="peoples faces..."
+		category="Personal">
+
+		<property name="FolderName">images</property>
+		<property name="SearchPattern">*.png;*.jpg;*.bmp;*.gif</property>
+		<property name="IncludeSubDirectories">False</property>
+		<property name="Unique">False</property>
+		<property name="MinLength">1</property>
+		<property name="MaxLength">10000</property>
+		
+		<matches table="Person" field="Picture" score="50" />
+		<matches field="Photo" score="20" />
+
+		<type sqlType="Image"/>
+	</generator>
+</generators>

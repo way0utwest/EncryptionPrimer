@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.FileListGenerator"
+		name="Currency Code"
+		description="USD, AED, AFN, ALL, ANG, EUR, AOA..."
+		category="Payment">
+
+		<property name="FileName">Currency.txt</property>
+
+		<matches field="Currency.*Code" score="80" minlen="3"/>
+		<matches field="Currency" score="30" minlen="3"/>
+		<matches table="Currency" field="Code" score="30" minlen="3"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Building Unit"
+		description="Apartment,Basement,Floor,Lower,Penthouse..."
+		category="Geographical">
+
+		<property name="Expression">(Apartment|Basement|Building|Department|Floor|Front|Hangar|Lobby|Lot|Lower|Office|Penthouse|Pier|Rear|Room|Side|Slip|Space|Stop|Suite|Trailer|Unit|Upper)</property>
+		<matches Field=".*Building.*Unit.*" score="45" minlen="22"/>		
+		<type type="string"/>
+	</generator>
+</generators>

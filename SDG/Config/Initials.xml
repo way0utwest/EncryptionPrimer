@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Initials"
+		description="HR, TP, P, Y, Q, RD..."
+		category="Personal">
+
+		<property name="Expression">([ABCDHNPRST]|[A-EGHN-T]|[A-Z]){1,2}</property>
+
+		<matches field="Initials" score="80" minlen="2"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.FileListGenerator"
+		name="Country"
+		description="Aruba, Afghanistan, Angola..."
+		category="Geographical">
+
+		<property name="FileName">Country.txt</property>
+
+		<matches field=".*Country.*" score="90" minlen="14"/>
+		<matches field=".*Addr.*3" score="10" minlen="14"/>
+		<matches field=".*Addr.*[4-6]" score="20" minlen="14"/>
+		<type type="string"/>
+	</generator>
+</generators>

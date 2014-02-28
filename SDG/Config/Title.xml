@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Title"
+		description="Mr, Dr., Ms, Miss."
+		category="Personal">
+		<property name="Expression">Mr|((Mrs|Miss|Ms)|Dr)(\.?)</property>
+		<matches field=".*Title" score="10" minlen="5"/>
+		<type type="string"/>
+	</generator>
+</generators>

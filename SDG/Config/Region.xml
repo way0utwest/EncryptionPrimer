@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="Region"
+		description="IK-MU, NC-JY, TX-NN, AL-BA, MA-YD..."
+		category="Geographical">
+		<property name="Expression">(AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY)-[A-Z]{2}</property>
+		<matches field=".*Region.*" score="45" minlen="5"/>
+		<type type="string"/>
+	</generator>
+</generators>

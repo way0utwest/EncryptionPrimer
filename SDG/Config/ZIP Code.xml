@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="ZIP Code"
+		description="83243, 55727, 75802, 03614..."
+		category="Geographical">
+
+		<property name="Expression">[0-9]{5}</property>
+
+		<matches field=".*PostalCode.*" score="65" minlen="5"/>
+		<matches field=".*ZipCode.*" score="80" minlen="5"/>
+		<matches field=".*Zip.*" score="60" minlen="5"/>
+		<matches field=".*Addr.*4" score="12" minlen="5"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

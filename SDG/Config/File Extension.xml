@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<generators>
+	<generator
+		type="RedGate.SQLDataGenerator.ExpressionGenerators.RegexpGenerator"
+		name="File Extensions"
+		description="bmp,jpg,gif,doc,xls..."
+		category="Business">
+
+		<property name="Expression">(bmp|jpg|gif|doc|xls|ppt|txt|ini|php|asm|pdf|aspx|html|xml)</property>
+
+		<matches field="fileextension" score="100" minlen="3"/>
+		<matches field="extn" score="20" minlen="3"/>
+
+		<type type="string"/>
+	</generator>
+</generators>

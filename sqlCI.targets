@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- sqlCI: Red Gate's SQL Continuous Integration -->
+
+  <PropertyGroup>
+
+    <!-- Database folder path -->
+    <!-- Required -->
+    <!-- Path to the database folder in source control. If it is the build VCS root, then enter: . -->
+    <scriptsFolder></scriptsFolder>
+
+    <!-- Database server -->
+    <!-- Optional -->
+    <!-- For example sql01.example.com\sql2008 -->
+    <databaseServer></databaseServer>
+
+    <!-- Target database name -->
+    <!-- Optional. Requires DatabaseServer if set -->
+    <!-- The target database to keep up to date with the changes in source control. This must be an existing database on the server; the runner does not create the database for you. -->
+    <databaseName></databaseName>
+
+    <!-- Windows authentication -->
+    <!-- Optional -->
+    <!-- For Windows authentication, enter true. This uses the Windows account the build agents run under. For SQL authentication, enter false. -->
+    <databaseIntegratedAuthentication></databaseIntegratedAuthentication>
+
+    <!-- SQL username -->
+    <!-- Required if DatabaseServer is set and Windows authentication is false -->
+    <databaseUserName></databaseUserName>
+
+    <!-- SQL password -->
+    <!-- Required if DatabaseServer is set and Windows authentication is false -->
+    <databasePassword></databasePassword>
+
+    <!-- NuGet package name -->
+    <!-- Optional. Requires PackageVersion if set -->
+    <!-- Name of the NuGet package to create. -->
+    <packageId></packageId>
+
+    <!-- Build number -->
+    <!-- Required if PackageId is set -->
+    <!-- On TeamCity, enter $(build_number)
+On CruiseControl.NET, enter $(CCNetLabel)
+If you are using a different build system, please email support@red-gate.com for help.
+If you are using this through the command line, enter a number here to set the build number manually. -->
+    <packageVersion></packageVersion>
+
+    <!-- NuGet API key -->
+    <!-- Requires either PackageRepository or DeploymentManagerUrl and DeploymentManagerApiKey if set -->
+    <!-- The API key of the NuGet Package Repository for publishing the package, for example: 00000000-0000-0000-0000-000000000000 -->
+    <apiKeyForPackagePublish></apiKeyForPackagePublish>
+
+    <!-- Generate a creation script -->
+    <!-- Optional -->
+    <!-- Enter true to generate a script that will create the source database. The script appears as a build artefact. -->
+    <generateCreationScript></generateCreationScript>
+
+    <!-- Validate the creation script -->
+    <!-- Optional. Requires DatabaseServer if true -->
+    <!-- Enter true to create a test database with the creation script. Errors are reported in the build output. -->
+    <validateCreationScript></validateCreationScript>
+
+    <!-- Prepare upgrade scripts for currently deployed versions -->
+    <!-- Optional. Requires DeploymentManagerUrl if true -->
+    <!-- To prepare upgrade scripts for versions currently deployed in Deployment Manager, enter true. -->
+    <generateUpgradeScriptForCurrentlyDeployedVersions></generateUpgradeScriptForCurrentlyDeployedVersions>
+
+    <!-- Prepare upgrade scripts for previous versions -->
+    <!-- Optional. Requires DeploymentManagerUrl or PackageRepository if set -->
+    <!-- Comma-separated list of production database NuGet versions to prepare upgrade scripts for. -->
+    <generateUpgradeScriptFor></generateUpgradeScriptFor>
+
+    <!-- Validate the upgrade script -->
+    <!-- Optional. Requires DatabaseServer if true -->
+    <!-- Enter true to upgrade a test database of the previous versions from Deployment Manager. Errors are reported in the build output. -->
+    <validateUpgradeScript></validateUpgradeScript>
+
+    <!-- Package repository URL -->
+    <!-- Either this or DeploymentManagerUrl is required if GenerateUpgradeScriptFor is set -->
+    <!-- NuGet package repository URL for publishing and retrieving packages. For example: http://nuget.example.com/api/v2/ or http://buildserver.example.com/guestAuth/app/nuget/v1/FeedService.svc -->
+    <packageRepository></packageRepository>
+
+    <!-- Deployment manager URL -->
+    <!-- Either this or PackageRepository is required if GenerateUpgradeScriptFor or ApiKeyForPackagePublish is set. This is required if GenerateUpgradeScriptForCurrentlyDeployedVersions is true. -->
+    <!-- URL of Red Gate Deployment Manager, for example: http://deploymentmanager.example.com/ -->
+    <deploymentManagerUrl></deploymentManagerUrl>
+
+    <!-- Deployment Manager server key -->
+    <!-- Required if DeploymentManagerUrl is set -->
+    <!-- The API key for Red Gate Deployment Manager. You can find this in your profile in the Deployment Manager UI. -->
+    <deploymentManagerApiKey></deploymentManagerApiKey>
+
+    <!-- Populate database with test data -->
+    <!-- Optional -->
+    <!-- To populate the database with test data, enter the path to a SQL Data Generator project file. The path must be relative to the VCS root. -->
+    <sqlDataGeneratorProject></sqlDataGeneratorProject>
+
+    <!-- tSQLt tests -->
+    <!-- Optional -->
+    <!-- To run tSQLt tests in source control for the database, enter true. -->
+    <enableTsqlt></enableTsqlt>
+
+    <!-- Generate database documentation -->
+    <!-- Optional -->
+    <!-- Enter the path to a SQL Doc project file. The path must be relative to the VCS root. -->
+    <sqlDocProject></sqlDocProject>
+
+    <!-- SQL Compare command line arguments -->
+    <!-- Optional -->
+    <!-- Enter any SQL Compare command line arguments you want to use. For example /options:IgnoreWhiteSpace /include:Identical -->
+    <additionalCompareArgs></additionalCompareArgs>
+
+    <!-- Automation license serial number -->
+    <!-- Optional -->
+    <!-- You can find your serial number on your invoice. If you do not enter a key, you will start a one month free trial. -->
+    <licenseSerialKey></licenseSerialKey>
+
+    <!-- Email address for updates -->
+    <!-- Optional -->
+    <!-- If you want to recieve email notifications about updates to the product, enter an email address. -->
+    <emailAddress></emailAddress>
+
+  </PropertyGroup>
+
+
+
+
+
+  <!-- You shouldn't need to change anything after here. -->
+
+  <PropertyGroup>
+    <sqlCIargs></sqlCIargs>
+    <sqlCIargs Condition="'$(scriptsFolder)' != ''">$(sqlCIargs) "/scriptsFolder:$(scriptsFolder)"</sqlCIargs>
+    <sqlCIargs Condition="'$(databaseServer)' != ''">$(sqlCIargs) "/databaseServer:$(databaseServer)"</sqlCIargs>
+    <sqlCIargs Condition="'$(databaseName)' != ''">$(sqlCIargs) "/databaseName:$(databaseName)"</sqlCIargs>
+    <sqlCIargs Condition="'$(databaseIntegratedAuthentication)' != '' And '$(databaseIntegratedAuthentication)' != '0' And '$(databaseIntegratedAuthentication)' != 'false'">$(sqlCIargs) "/databaseIntegratedAuthentication"</sqlCIargs>
+    <sqlCIargs Condition="'$(databaseUserName)' != ''">$(sqlCIargs) "/databaseUserName:$(databaseUserName)"</sqlCIargs>
+    <sqlCIargs Condition="'$(databasePassword)' != ''">$(sqlCIargs) "/databasePassword:$(databasePassword)"</sqlCIargs>
+    <sqlCIargs Condition="'$(packageId)' != ''">$(sqlCIargs) "/packageId:$(packageId)"</sqlCIargs>
+    <sqlCIargs Condition="'$(packageVersion)' != ''">$(sqlCIargs) "/packageVersion:$(packageVersion)"</sqlCIargs>
+    <sqlCIargs Condition="'$(apiKeyForPackagePublish)' != ''">$(sqlCIargs) "/apiKeyForPackagePublish:$(apiKeyForPackagePublish)"</sqlCIargs>
+    <sqlCIargs Condition="'$(generateCreationScript)' != '' And '$(generateCreationScript)' != '0' And '$(generateCreationScript)' != 'false'">$(sqlCIargs) "/generateCreationScript"</sqlCIargs>
+    <sqlCIargs Condition="'$(validateCreationScript)' != '' And '$(validateCreationScript)' != '0' And '$(validateCreationScript)' != 'false'">$(sqlCIargs) "/validateCreationScript"</sqlCIargs>
+    <sqlCIargs Condition="'$(generateUpgradeScriptForCurrentlyDeployedVersions)' != '' And '$(generateUpgradeScriptForCurrentlyDeployedVersions)' != '0' And '$(generateUpgradeScriptForCurrentlyDeployedVersions)' != 'false'">$(sqlCIargs) "/generateUpgradeScriptForCurrentlyDeployedVersions"</sqlCIargs>
+    <sqlCIargs Condition="'$(generateUpgradeScriptFor)' != ''">$(sqlCIargs) "/generateUpgradeScriptFor:$(generateUpgradeScriptFor)"</sqlCIargs>
+    <sqlCIargs Condition="'$(validateUpgradeScript)' != '' And '$(validateUpgradeScript)' != '0' And '$(validateUpgradeScript)' != 'false'">$(sqlCIargs) "/validateUpgradeScript"</sqlCIargs>
+    <sqlCIargs Condition="'$(packageRepository)' != ''">$(sqlCIargs) "/packageRepository:$(packageRepository)"</sqlCIargs>
+    <sqlCIargs Condition="'$(deploymentManagerUrl)' != ''">$(sqlCIargs) "/deploymentManagerUrl:$(deploymentManagerUrl)"</sqlCIargs>
+    <sqlCIargs Condition="'$(deploymentManagerApiKey)' != ''">$(sqlCIargs) "/deploymentManagerApiKey:$(deploymentManagerApiKey)"</sqlCIargs>
+    <sqlCIargs Condition="'$(sqlDataGeneratorProject)' != ''">$(sqlCIargs) "/sqlDataGeneratorProject:$(sqlDataGeneratorProject)"</sqlCIargs>
+    <sqlCIargs Condition="'$(enableTsqlt)' != '' And '$(enableTsqlt)' != '0' And '$(enableTsqlt)' != 'false'">$(sqlCIargs) "/enableTsqlt"</sqlCIargs>
+    <sqlCIargs Condition="'$(sqlDocProject)' != ''">$(sqlCIargs) "/sqlDocProject:$(sqlDocProject)"</sqlCIargs>
+    <sqlCIargs Condition="'$(additionalCompareArgs)' != ''">$(sqlCIargs) "/additionalCompareArgs:$(additionalCompareArgs)"</sqlCIargs>
+    <sqlCIargs Condition="'$(licenseSerialKey)' != ''">$(sqlCIargs) "/licenseSerialKey:$(licenseSerialKey)"</sqlCIargs>
+    <sqlCIargs Condition="'$(emailAddress)' != ''">$(sqlCIargs) "/emailAddress:$(emailAddress)"</sqlCIargs>
+    <sqlCI>(echo set REDGATE_SEND_ERROR_REPORTS=true &amp; echo sqlCI.exe $(sqlCIargs)) | cmd.exe</sqlCI> <!-- set REDGATE_SEND_ERROR_REPORTS to false if you don't want to send us error reports -->
+  </PropertyGroup>
+  <Target Name="sqlCI">
+    <Error Condition="'$(sqlCIargs)' == ''" Text="You have to edit the variables at the top of the sqlCI.targets script" />
+    <Message Text="Starting: $(sqlCI)" />
+    <Exec Command="$(sqlCI)" />
+  </Target>
+
+</Project>
