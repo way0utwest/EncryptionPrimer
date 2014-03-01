@@ -35,6 +35,8 @@ ON dbo.Employees(EmployeeID);
 CREATE NONCLUSTERED INDEX Employee_NCI_EmpTax
 ON dbo.Employees(EmpTaxID);
 
+CREATE NONCLUSTERED INDEX Employee_NCI_HashPartition
+ON dbo.Employees(HashPartition);
 
 -- move the last four
 UPDATE dbo.Employees
@@ -126,5 +128,3 @@ AS /* based on value being hashed, generates a number within the divisor range t
 UPDATE dbo.Employees
  SET hashpartition = dbo.ufn_GroupData(EmpTaxID, 10000)
 
- CREATE CLUSTERED INDEX Employee_CLI_HashPart
- ON dbo.Employees(hashpartition);

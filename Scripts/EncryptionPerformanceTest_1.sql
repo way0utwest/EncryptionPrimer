@@ -67,16 +67,40 @@ SELECT
 	, lastname
   FROM dbo.Employees AS e
   WHERE DECRYPTBYKEY(EmpIDSymKey) = @ssn
-  AND hashpartition = dbo.ufn_GroupData(@ssn, 100)  
+  AND hashpartition = dbo.ufn_GroupData(@ssn, 10000)  
 
 
 --  asym data
+DECLARE @ssn VARCHAR(9)
+SELECT @ssn = '157538457'
+
 SELECT
 	EmployeeID
 	, FirstName
 	, lastname
+	, EmpTaxID
   FROM dbo.Employees AS e
-  WHERE DECRYPTBYASYMKEY(asymkey_id(N'EmpIDProtection'), EmpIDASymKey ,N'Don^tEverU$eP@sswordH3r#') AS VARCHAR(9)) = '712973412'
+  WHERE CAST( DECRYPTBYASYMKEY(asymkey_id(N'EmpIDProtection')
+                              , EmpIDASymKey 
+				              , N'Don^tEverU$eP@sswordH3r#')
+		      AS VARCHAR(9)) = @SSN
+
+
+-- WITH HASH PARTITION
+DECLARE @ssn VARCHAR(9)
+SELECT @ssn = '157538457'
+
+SELECT
+	EmployeeID
+	, FirstName
+	, lastname
+	, EmpTaxID
+  FROM dbo.Employees AS e
+  WHERE CAST( DECRYPTBYASYMKEY(asymkey_id(N'EmpIDProtection')
+                              , EmpIDASymKey 
+				              , N'Don^tEverU$eP@sswordH3r#')
+		      AS VARCHAR(9)) = @SSN
+  AND hashpartition = dbo.ufn_GroupData(@ssn, 10000)  
 
  SET STATISTICS IO Off
  SET STATISTICS TIME Off
