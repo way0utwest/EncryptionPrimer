@@ -118,6 +118,9 @@ update s
  ;
  go
 
+
+
+
 -- Validate password, use Andy's password
 declare @p varchar(200);
 select @p = 'ADiffP@sswordUCan!tGuess';
@@ -131,6 +134,17 @@ declare @p varchar(200);
 select @p = 'AP@sswordUCan!tGuess';
 exec CheckPassword 'Steve', @p;
 go
+
+
+
+
+
+
+-- Hack without breaking the hash
+
+
+
+
 
 
 -- reset the table, use salt
@@ -188,6 +202,26 @@ select @p = 'ADiffP@sswordUCan!tGuess';
 exec CheckPassword 'Steve', @p;
 go
 
+
+
+
+-- better protection
+alter procedure CheckPassword
+   @user varchar(200)
+ , @password varchar(200)
+ with encryption
+
+as
+if hashbytes('SHA2_512', @password + @user) = (select passwordhash 
+                                 from UserTest
+								 where firstname = @user
+								)
+  select 'Password Match'
+else
+  select 'Password Fail'
+  ;
+return
+go
 
 
 

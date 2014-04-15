@@ -188,6 +188,7 @@ create certificate MySalaryCert
 -- clean up
 drop asymmetric key HRProtection;
 drop symmetric key SalarySymKey;
+DROP ASYMMETRIC KEY hrprotection
 drop certificate MySalaryCert;
 drop certificate MyHRCert;
 drop table Salary;

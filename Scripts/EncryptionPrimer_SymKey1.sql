@@ -17,21 +17,19 @@ go
 create table Employees
 ( id int identity(1,1)
 , firstname varchar(200)
-,lastname varchar(200)
 ,title varchar(200)
 ,salary numeric(10, 4)
 );
 go
 insert Employees 
- values ('Steve','Jones','CEO', 5000)
- ,      ('Delaney','Jones','Manure Shoveler', 10)
- ,      ('Kendall','Jones','Window Washer', 5);
+ values ('Steve', 'CEO', 5000)
+ ,      ('Delaney', 'Manure Shoveler', 10)
+ ,      ('Kendall', 'Window Washer', 5);
  go
 -- check the data
 select 
  id
 ,firstname
-,lastname
 ,title
 ,salary
  from Employees
@@ -72,11 +70,13 @@ update Employees
  go
 
 
+SELECT key_guid('MySalaryProtector') ;
+
+
  -- check the data
 select 
   id
 , firstname
-, lastname
 , title
 , salary
 , EnryptedSalary
@@ -84,14 +84,12 @@ select
 go
 
 
-SELECT key_guid('MySalaryProtector') ;
 
 
 -- decrypt the data
 select 
   id
 ,firstname
-,lastname
 ,title
 ,Salary = DecryptByKey(EnryptedSalary)
 ,EnryptedSalary
@@ -103,7 +101,6 @@ go
 select 
   id
 , firstname
-, lastname
 , title
 , Salary = cast(cast(DecryptByKey(EnryptedSalary) as nvarchar) as numeric(10,2))
 , EnryptedSalary
@@ -129,7 +126,6 @@ update E
 select 
   id
 , firstname
-, lastname
 , title
 , Salary = cast(cast(DecryptByKey(EnryptedSalary) as nvarchar) as numeric(10,2))
 , EnryptedSalary
@@ -180,7 +176,6 @@ go
 select 
   id
 , firstname
-, lastname
 , title
 , Salary
 , rowguidID
@@ -201,7 +196,6 @@ select
 , Salary = cast(DECRYPTBYKEY(EnryptedSalary, 1,cast(rowguidid as nvarchar(100))) as nvarchar(200))
 , rowguidID
 , firstname
-, lastname
  from Employees;
 go
 
@@ -221,11 +215,17 @@ select
 , Salary = cast(DECRYPTBYKEY(EnryptedSalary, 1,cast(rowguidid as nvarchar(100))) as nvarchar)
 , rowguidID
 , firstname
-, lastname
 , EnryptedSalary
  from Employees;
 go
 
+
+
+-- check code
+-- Now re-encrypt, with an authenicator
+update Employees
+ set EnryptedSalary = ENCRYPTBYKEY(key_guid('MySalaryProtector'), cast(salary as nvarchar), 1, cast(rowguidid as nvarchar(100)));
+ go
 
 
 
