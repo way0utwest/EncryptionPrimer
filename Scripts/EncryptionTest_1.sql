@@ -27,6 +27,11 @@ CREATE TABLE [dbo].[Employees]
 
 
 GO
+ALTER TABLE dbo.Employees ADD CONSTRAINT
+	PK_Employees PRIMARY KEY CLUSTERED 
+	(
+	EmployeeID
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 
 -- index the ID field
 CREATE NONCLUSTERED INDEX Employee_NCI_EmpID
@@ -37,6 +42,10 @@ ON dbo.Employees(EmpTaxID);
 
 CREATE NONCLUSTERED INDEX Employee_NCI_HashPartition
 ON dbo.Employees(HashPartition);
+
+
+-- populate the table
+-- I used SQL Data Generator - http://www.red-gate.com/products/sql-development/sql-data-generator/
 
 -- move the last four
 UPDATE dbo.Employees
@@ -121,7 +130,9 @@ AS /* based on value being hashed, generates a number within the divisor range t
             SET @Result = @Result % @Divisor;
             RETURN @Result;            
     END 
-
+RETURN
+;
+go
 -- hash the last 4 with modulus
 -- choose modulus of 10000 here.
 -- this gives 1,0000,000 / 10,000 or 100 items/group

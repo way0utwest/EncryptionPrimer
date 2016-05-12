@@ -17,9 +17,12 @@ go
 
 
 
- 
-
-
+ -- get test case
+ SELECT TOP 100
+  *
+   FROM dbo.Employees
+;
+go
 
 
  -- Performance comparison
@@ -29,7 +32,7 @@ go
 
  -- Get singleton ID
 DECLARE @ssn VARCHAR(9)
-SELECT @ssn = '157538457'
+SELECT @ssn = '760988055'
 SELECT
 	EmployeeID
 	, FirstName
@@ -49,7 +52,7 @@ OPEN SYMMETRIC KEY EncryptEmpIDSymKey
    DECRYPTION BY PASSWORD = 'Us#aS%&PerStrongP2ssword';
 ;
 DECLARE @ssn VARCHAR(9)
-SELECT @ssn = '157538457'
+SELECT @ssn = '760988055'
 SELECT
 	EmployeeID
 	, FirstName
@@ -60,7 +63,7 @@ SELECT
 
 -- add hash
 DECLARE @ssn VARCHAR(9)
-SELECT @ssn = '157538457'
+SELECT @ssn = '760988055'
 SELECT
 	EmployeeID
 	, FirstName
@@ -72,7 +75,7 @@ SELECT
 
 --  asym data
 DECLARE @ssn VARCHAR(9)
-SELECT @ssn = '157538457'
+SELECT @ssn = '760988055'
 
 SELECT
 	EmployeeID
@@ -88,7 +91,7 @@ SELECT
 
 -- WITH HASH PARTITION
 DECLARE @ssn VARCHAR(9)
-SELECT @ssn = '157538457'
+SELECT @ssn = '760988055'
 
 SELECT
 	EmployeeID
