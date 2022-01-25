@@ -15,7 +15,7 @@ declare @t nvarchar(200)
 select @t = N'What is the hash of this?'
 
 select 
-  Hashbytes('SHA', @t) as 'Hash1'
+  HASHBYTES('SHA', @t) as 'Hash1'
 go
 
 
@@ -51,7 +51,7 @@ select @salt = N'R@nd0mS!a6lTValue';
 
 select 'string - unsalted', Hashbytes('SHA2_512', @t)
 UNION ALL
-select 'string - salted', Hashbytes('SHA2_512', @T + @salt);
+select 'string - salted', Hashbytes('SHA2_512', @t + @salt);
 go
 
 

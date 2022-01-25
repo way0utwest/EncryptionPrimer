@@ -62,8 +62,8 @@ GO
 USE [master]
 GO
 CREATE DATABASE [TDE_Primer] ON 
-( FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\TDE_Primer.mdf' ),
-( FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\TDE_Primer_log.ldf' )
+( FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\TDE_Primer.mdf' ),
+( FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\TDE_Primer_log.ldf' )
  FOR ATTACH
 GO
 
@@ -92,7 +92,7 @@ USE TDE_Primer;
 GO
 -- Create DEK
 CREATE DATABASE ENCRYPTION KEY
-WITH ALGORITHM = AES_128
+WITH ALGORITHM = AES_256 
 ENCRYPTION BY SERVER CERTIFICATE TDEPRimer_CertSecurity;
 GO
 
@@ -172,8 +172,8 @@ GO
 USE [master]
 GO
 CREATE DATABASE [TDE_Primer] ON 
-( FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\TDE_Primer.mdf' ),
-( FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\TDE_Primer_log.ldf' )
+( FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\TDE_Primer.mdf' ),
+( FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\TDE_Primer_log.ldf' )
  FOR ATTACH
 GO
 BACKUP DATABASE TDE_Primer
